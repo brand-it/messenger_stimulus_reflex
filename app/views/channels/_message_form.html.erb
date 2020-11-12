@@ -1,0 +1,8 @@
+
+<%= form_with model: message, id: dom_id(message), data: { controller: "message", reflex: 'submit->message#submit'  } do |form| %>
+  <%= message.errors.full_messages if message.errors.any? %>
+  <%= form.label :body %>
+  <%= form.text_field :body, data: { target: 'message.body' } %>
+  <%= form.hidden_field :channel_id %>
+  <%= form.submit %>
+<% end %>

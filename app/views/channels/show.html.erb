@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @current_channel.name %>
+</p>
+<div id='<%= dom_id(@current_channel, :messages) %>'>
+  <%= render MessageComponent.with_collection(@current_channel.messages) %>
+</div>
+<%= render 'message_form', message: @message %>
+
+<%= link_to 'Edit', edit_channel_path(@current_channel) %> |
+<%= link_to 'Back', channels_path %>

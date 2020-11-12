@@ -1,0 +1,7 @@
+<div>
+  <% if Current.user == @message.user %>
+    <b><%= @message.user.name %></b> <%= @message.body %>
+  <% else %>
+    From <%= @message.user&.name %> <%= @message.body %>
+  <% end %>
+</div>
